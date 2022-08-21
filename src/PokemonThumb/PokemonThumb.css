@@ -1,0 +1,49 @@
+img {
+    width: 40%;
+}
+
+.thumb-container {
+    background: white;
+    
+}
+
+.types {
+    text-align: left;
+}
+
+.type {
+    display: inline;
+    width: 30%;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.type-background {
+    border: 2px solid white;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+.type-grass-background {
+    background-color: greenyellow;
+}
+
+.type-poison-background {
+    background-color: blueviolet;
+}
+
+.type-fire-background {
+    background-color: rgb(242, 57, 57);
+}
+
+.type-water-background {
+    background-color: lightblue;
+}
+
+.type-bug-background {
+    background-color: rgb(123, 190, 127);
+}
+
+.type-normal-background {
+    background-color: antiquewhite;
+}

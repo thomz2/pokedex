@@ -1,0 +1,18 @@
+.container {
+    width: 40%;
+    margin: 15px auto;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.img-pokemon {
+    width: 90%;
+}
+
+.botoes {
+    width: 90%;
+    margin: 15px auto;
+    padding-bottom: .5em;
+}
