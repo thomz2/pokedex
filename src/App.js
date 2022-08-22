@@ -6,7 +6,7 @@ import PokemonThumb from './PokemonThumb/PokemonThumb';
 function App() {
 
   const [allPokemons, setAllPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=21");
+  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=30");
   
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
