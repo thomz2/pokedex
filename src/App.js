@@ -7,6 +7,8 @@ function App() {
 
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=30");
+  const [page, setPage] = useState(1);
+  const [flag, setFlag] = useState(false);
   
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
@@ -44,21 +46,23 @@ function App() {
   }
 
   useEffect(() => {
-    getAllPokemons();
-  }, []);
+    if (flag)
+      getAllPokemons();
+    setFlag((currentFlag) => true);
+  }, [page]);
   
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)){
         // console.log("elemento visivel");
-        getAllPokemons();
+        setPage((current_page) => current_page + 1);
       }
     });
 
     intersectionObserver.observe(document.querySelector("#sentinela"));
 
     return () => intersectionObserver.disconnect();
-  });
+  }, []);
 
   return (
     <div className="App">
