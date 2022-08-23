@@ -3,7 +3,7 @@ body {
   padding: 0;
   background-image: url("wallpaper.jpg");
   background-color: rgb(127, 172, 113);
-  /* background-size: cover; */
+  background-size: contain;
   background-repeat: no-repeat;
   /* background-size: cover; */
   /* filter: drop-shadow(2px 2px 5px black); */
@@ -31,4 +31,13 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pokemons-grid {
+    grid-template-columns: 40% 40%;
+  }
+  .grid-item {
+    font-size: 2vw;
+  }
 }

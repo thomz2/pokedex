@@ -9,8 +9,12 @@ function App() {
   const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=30");
   const [page, setPage] = useState(1);
   const [flag, setFlag] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const getAllPokemons = async () => {
+
+    setLoading(true);
+
     const res = await fetch(loadMore);
     const data = await res.json();
     console.log(data);
@@ -22,9 +26,21 @@ function App() {
       result.forEach( async (pokemon) => {
         const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
         const data2 = await res2.json();
-        
-        // setAllPokemons([...allPokemons, data]);
+      
         setAllPokemons((currentList) => {
+
+          // let ls = [...currentList, data2];
+          
+          // if (ls.length >= 2){
+          //   if (ls[ls.length-1].id < ls[ls.length-2].id) {
+          //     const aux = ls[ls.length-1];
+          //     ls[ls.length-1] = ls[ls.length-2]; 
+          //     ls[ls.length-2] = aux;
+          //   }
+          // }
+
+          // return ls;
+
           return [...currentList, data2]
             // ACHO QUE FICA CUSTOSO DEPOIS...
             .sort( (a, b) => {
@@ -42,6 +58,8 @@ function App() {
     //   if (a.id < b.id) return -1;
     //   return true;
     // }));
+
+    setLoading(false);
     
   }
 

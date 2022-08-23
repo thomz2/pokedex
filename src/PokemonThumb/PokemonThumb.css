@@ -2,11 +2,6 @@ img {
     width: 40%;
 }
 
-.thumb-container {
-    background: white;
-    
-}
-
 .types {
     text-align: left;
 }
@@ -22,6 +17,12 @@ img {
     border: 2px solid white;
     border-top-left-radius: 0.2em;
     border-top-right-radius: 0.2em;
+}
+
+.thumb-container {
+    background: white;
+    padding: 1px;
+    font-size: 2vw;
 }
 
 .type-grass-background {

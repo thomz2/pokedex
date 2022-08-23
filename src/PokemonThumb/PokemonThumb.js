@@ -29,7 +29,6 @@ const PokemonThumb = ({ id, name, image, types }) => {
                         {typeNames[1]}                        
                     </div>}
                 </div>
-                
             </div>
         </div>
     );
