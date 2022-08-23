@@ -45,6 +45,6 @@
 @media screen and (max-width: 768px) {
     .navbar p {
         position: relative;
-        top: 20px;
+        top: 25px;
     }
 }
