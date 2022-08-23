@@ -47,6 +47,18 @@ function App() {
     getAllPokemons();
   }, []);
   
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)){
+        // console.log("elemento visivel");
+        getAllPokemons();
+      }
+    });
+
+    intersectionObserver.observe(document.querySelector("#sentinela"));
+
+    return () => intersectionObserver.disconnect();
+  });
 
   return (
     <div className="App">
@@ -63,6 +75,7 @@ function App() {
                  </div> 
         }
         )}
+        <div id='sentinela'></div>
       </div>
     </div>
   );
