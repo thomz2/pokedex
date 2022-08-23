@@ -22,11 +22,25 @@ function App() {
         const data2 = await res2.json();
         
         // setAllPokemons([...allPokemons, data]);
-        setAllPokemons(currentList => [...currentList, data2]);
+        setAllPokemons((currentList) => {
+          return [...currentList, data2]
+            // ACHO QUE FICA CUSTOSO DEPOIS...
+            .sort( (a, b) => {
+              if (a.id < b.id) return -1;
+              return true;
+            });
+        });
 
       });
     }
     createPokemonObject(data.results);
+
+    // NAO SEI PQ NAO FUNCIONA 
+    // setAllPokemons(currentList => currentList.sort((a, b) => {
+    //   if (a.id < b.id) return -1;
+    //   return true;
+    // }));
+    
   }
 
   useEffect(() => {
