@@ -5,6 +5,7 @@ body {
   background-color: rgb(127, 172, 113);
   background-size: contain;
   background-repeat: no-repeat;
+  user-select: none;
   /* background-size: cover; */
   /* filter: drop-shadow(2px 2px 5px black); */
    

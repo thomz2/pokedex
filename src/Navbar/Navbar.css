@@ -41,3 +41,10 @@
 .css-input:focus {
     outline:none;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar p {
+        position: relative;
+        top: 10px;
+    }
+}
