@@ -20,7 +20,7 @@ body {
 } */
 
 .pokemons-grid {
-  width: 68%;
+  width: 45%;
   margin: 2% auto;
   display: grid;
   grid-template-columns: 40% 40% 40%;

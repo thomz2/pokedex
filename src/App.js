@@ -29,18 +29,6 @@ function App() {
       
         setAllPokemons((currentList) => {
 
-          // let ls = [...currentList, data2];
-          
-          // if (ls.length >= 2){
-          //   if (ls[ls.length-1].id < ls[ls.length-2].id) {
-          //     const aux = ls[ls.length-1];
-          //     ls[ls.length-1] = ls[ls.length-2]; 
-          //     ls[ls.length-2] = aux;
-          //   }
-          // }
-
-          // return ls;
-
           return [...currentList, data2]
             // ACHO QUE FICA CUSTOSO DEPOIS...
             .sort( (a, b) => {
@@ -51,13 +39,8 @@ function App() {
 
       });
     }
-    createPokemonObject(data.results);
-
-    // NAO SEI PQ NAO FUNCIONA 
-    // setAllPokemons(currentList => currentList.sort((a, b) => {
-    //   if (a.id < b.id) return -1;
-    //   return true;
-    // }));
+    
+    await createPokemonObject(data.results);
 
     setLoading(false);
     
